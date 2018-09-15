@@ -22,9 +22,9 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('github.com')
+host('joslr.com')
     ->user('deployer')
-    ->identifyFile('~/.ssh/joslr')
+    ->identityFile('~/.ssh/joslr')
     ->set('deploy_path', '/var/www/html/joslr');    
     
 // Tasks
@@ -38,5 +38,5 @@ after('deploy:failed', 'deploy:unlock');
 
 // Migrate database before symlink new release.
 
-// before('deploy:symlink', 'artisan:migrate');
+before('deploy:symlink', 'artisan:migrate');
 
