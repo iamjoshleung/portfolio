@@ -1,0 +1,8 @@
+.l-header {
+    &__links {
+        > a {
+            padding: 1rem 3rem;
+            color: $color-dark-grey;
+        }
+    }
+}

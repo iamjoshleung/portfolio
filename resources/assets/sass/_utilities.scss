@@ -1,0 +1,51 @@
+.sub-heading {
+    font-size: .7rem;
+    margin: 3rem 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.item {
+    margin-bottom: 1rem;
+    padding: 0.2rem;
+
+    &__name {
+        font-weight: 700;
+
+        a {
+            transition: all 0.3s;
+            position: relative;
+
+            &:hover {
+                color: white;
+                
+
+                &:after {
+                    width: 100%;
+                }
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                transition: all 0.3s;
+                width: 0%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: $color-green;
+
+            }
+        }
+    }
+
+    &__desc {
+        font-weight: 300;
+        font-size: 0.9rem;
+    }
+}
+
+.is-narrow {
+    max-width: 800px;
+}

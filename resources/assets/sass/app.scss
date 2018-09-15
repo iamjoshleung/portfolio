@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+// Variables
+@import 'variables';
+
+@import '~bulma/bulma';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+@import '~swiper/dist/css/swiper';
+
+@import 'base';
+@import 'animations';
+@import 'utilities';
+
+@import './components/index';
+@import './layouts/index';

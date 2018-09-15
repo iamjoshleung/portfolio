@@ -1,0 +1,162 @@
+.project-viewer {
+    $p: &;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 90vw;
+    height: 100vh;
+    $box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    $circle-size: 2rem;
+
+    @include tablet {
+        width: 500px;
+    }
+
+    &.active {
+        #{$p}__container {
+            transform: translateX(0);
+        }
+
+        #{$p}__backdrop {
+            display: block;
+        }
+    }
+
+    &__backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+        display: none;
+    }
+
+    &__close {
+        $size: 2rem;
+        position: absolute;
+        top: 12px;
+        left: calc(-0.9rem);
+        width: $circle-size;
+        height: $circle-size;
+        background: white;
+        border-radius: 50%;
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+
+        box-shadow: 0 0 5px 0px #949494;
+        border: 0;
+        cursor: pointer;
+    }
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        background: white;
+        position: relative;
+        z-index: 2;
+        box-shadow: $box-shadow;
+        transform: translateX(110%);
+        transition: all 0.6s;
+
+        &:before {
+            content: "";
+            width: calc(#{$circle-size} * 1.3);
+            height: calc(#{$circle-size} * 1.3);
+            background-color: white;
+            position: absolute;
+            top: 8px;
+            left: calc(#{$circle-size} / -1.7);
+            border-radius: 50%;
+            box-shadow: 7px 0 5px 0px #949494;
+            z-index: 3;
+        }
+    }
+
+    &__gallery {
+        width: 100%;
+    }
+
+    &__content {
+        padding: 1rem;
+
+        @include tablet {
+            padding: 3rem 2rem;
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+
+    &__subtitle {
+        color: $color-dark-grey;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.7rem;
+    }
+
+    &__desc {
+        margin: 2rem 0;
+    }
+
+    &__tag {
+        padding: 0.5rem 1rem;
+        background: $color-light-grey;
+        display: inline-block;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        color: $color-dark-grey;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+
+        > a {
+            display: block;
+            width: 50%;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 0.6rem;
+            color: white;
+            flex-grow: 1;
+        }
+    }
+
+    &__github {
+        background: $color-green;
+    }
+
+    &__live {
+        background: $color-dark-grey;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .swiper-button {
+        &-prev {
+            background-image: url("../img/icons/arrow-prev.svg");
+        }
+
+        &-next {
+            background-image: url("../img/icons/arrow-next.svg");
+        }
+    }
+}

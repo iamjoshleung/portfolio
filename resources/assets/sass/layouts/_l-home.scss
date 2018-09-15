@@ -1,0 +1,14 @@
+.l-home {
+    &__projects {
+        @include tablet {
+            > .item {
+                display: inline-block;
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    .section {
+        padding-top: 0;
+    }
+}

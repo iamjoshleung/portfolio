@@ -1,0 +1,13 @@
+.project-filters {
+    border-top: 1px solid $color-light-grey;
+    border-bottom: 1px solid $color-light-grey;
+    padding: 0.4rem 1rem;
+
+    .level {
+        transition: all 0.5s;
+    }
+
+    .level-right {
+        width: 100%;
+    }
+}
