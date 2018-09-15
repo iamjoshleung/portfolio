@@ -102,13 +102,11 @@
 </template>
 
 <script>
-import ProjectsFilter from "../components/ProjectsFilter";
-import ProjectsList from "../components/ProjectsList";
 import Swiper from "swiper";
 import axios from "axios";
+import _ from 'lodash'
 
 export default {
-  components: { ProjectsFilter, ProjectsList },
   data() {
     return {
       showViewer: false,
@@ -119,11 +117,13 @@ export default {
   },
   computed: {
     personalProjects() {
-      return this.projects.filter(project => project.type === "personal");
+      const projects = this.projects.filter(project => project.type === "personal");
+       return _.sortBy(projects, ["order"]);
     },
 
     commercialProjects() {
-      return this.projects.filter(project => project.type === "commercial");
+      const projects = this.projects.filter(project => project.type === "commercial");
+      return _.sortBy(projects, ["order"]);
     }
   },
   watch: {
