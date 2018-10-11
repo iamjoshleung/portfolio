@@ -45,7 +45,7 @@
                         <div class="l-home__projects">
                             <div class="item" v-for="project in personalProjects" :key="project.name" @click="viewProject(project)">
                                 <div class="item__name">
-                                    <a href="#" :title="project.name">{{ project.name }}</a>
+                                    <a href="#" :title="project.name" @click.prevent="">{{ project.name }}</a>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                         <div class="l-home__projects">
                             <div class="item" v-for="project in commercialProjects" :key="project.name" @click="viewProject(project)">
                                 <div class="item__name">
-                                    <a href="#" :title="project.name">{{ project.name }}</a>
+                                    <a href="#" :title="project.name" @click.prevent="">{{ project.name }}</a>
                                 </div>
                             </div>
                         </div>
